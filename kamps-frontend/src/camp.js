@@ -19,6 +19,7 @@ class Camp {
     this.zip = zip;
     this.phone = phone;
     this.street_address = street_address;
+    this.adapter = new CampsAdapter();
   }
 
   createCampCard() {
