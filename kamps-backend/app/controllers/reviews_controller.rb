@@ -3,14 +3,14 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
-    @reviews = Review.all
-
-    render json: @reviews
+    @reviews = Review.where(camp_id: params[:camp_id])
+    render json: ReviewSerializer.new(@reviews).serialized_json
   end
 
   # GET /reviews/1
   def show
-    render json: @review
+    review = Review.find_by(id: params[:id])
+    render json: ReviewSerializer.new(review).serialized_json
   end
 
   # POST /reviews

@@ -3,14 +3,15 @@ class CampsController < ApplicationController
 
   # GET /camps
   def index
-    @camps = Camp.all
+    camps = Camp.all
 
-    render json: @camps
+    render json: CampSerializer.new(camp)
   end
 
   # GET /camps/1
   def show
-    render json: @camp
+    camp = Camp.find_by(id: params[:id])
+    render json: CampSerializer.new(camp).serialized_json
   end
 
   # POST /camps
