@@ -1,16 +1,14 @@
 class Camp {
   constructor(
-    id,
-    img_src,
-    name,
-    description,
-    website,
     borough,
+    name,
+    website,
+    img_src,
+    description,
     zip,
     phone,
     street_address
   ) {
-    this.id = id;
     this.img_src = img_src;
     this.name = name;
     this.description = description;
@@ -19,10 +17,11 @@ class Camp {
     this.zip = zip;
     this.phone = phone;
     this.street_address = street_address;
-    this.adapter = new CampsAdapter();
+    //this.adapter = new CampsAdapter();
   }
 
   createCampCard() {
+    debugger;
     // grab camp section
     const campSection = document.querySelector(".row");
 

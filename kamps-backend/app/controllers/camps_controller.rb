@@ -5,7 +5,7 @@ class CampsController < ApplicationController
   def index
     camps = Camp.all
 
-    render json: CampSerializer.new(camp)
+    render json: CampSerializer.new(camps)
   end
 
   # GET /camps/1

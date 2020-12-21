@@ -6,7 +6,7 @@ class CampsAdapter {
   }
 
   getCamps() {
-    return fetch(this.baseURL)
+    return fetch(baseURL)
       .then(resp => resp.json())
       .then(json => json.data);
   }
