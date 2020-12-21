@@ -1,4 +1,4 @@
 class CampSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :img_src, :name, :description, :website, :borough, :zip, :phone, :street_address, :reviews
 end
