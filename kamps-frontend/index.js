@@ -14,3 +14,5 @@ function getCamps() {
     // call createCampCard
     .catch(err => alert(err));
 }
+
+function getReviews() {}
