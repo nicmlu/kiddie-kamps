@@ -1047,3 +1047,32 @@ Processing by CampsController#index as */*
 Completed 200 OK in 78ms (Views: 54.0ms | ActiveRecord: 4.1ms | Allocations: 23508)
 
 
+Started GET "/camps" for 127.0.0.1 at 2020-12-21 17:45:26 -0500
+Processing by CampsController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mCamp Load (1.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 3.4ms | Allocations: 10114)
+
+
