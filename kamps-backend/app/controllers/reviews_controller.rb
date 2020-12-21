@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
   # POST /reviews
   def create
     if params[:camp_id]
-      camp = Review.find_by(camp_id: params[:camp_id])
+      camp = Camp.find_by(camp_id: params[:camp_id])
       review = camp.reviews.build(review_params)
       if item.save
         render json: ReviewSerializer.new(review).serialized_hash
