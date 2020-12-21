@@ -15,12 +15,12 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   def create
-    @review = Review.new(review_params)
-
-    if @review.save
-      render json: @review, status: :created, location: @review
-    else
-      render json: @review.errors, status: :unprocessable_entity
+    if params[:camp_id]
+      camp = Review.find_by(camp_id: params[:camp_id])
+      review = camp.reviews.build(review_params)
+      if item.save
+        render json: ReviewSerializer.new(review).serialized_hash
+      end
     end
   end
 
