@@ -21,7 +21,7 @@ class Camp {
   }
 
   createCampCard() {
-    debugger;
+    //debugger;
     // grab camp section
     const campSection = document.querySelector(".row");
 
