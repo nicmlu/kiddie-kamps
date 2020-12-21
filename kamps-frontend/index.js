@@ -11,6 +11,6 @@ function getCamps() {
     .then(resp => resp.json())
     .then(data => console.log(data))
     // populate the items and menus properties with the returned data
-    // call renderItems
+    // call createCampCard
     .catch(err => alert(err));
 }
