@@ -3,13 +3,13 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
-    reviews = Reviews.all
+    reviews = Review.all
     render json: ReviewSerializer.new(reviews)
   end
 
   # GET /reviews/1
   def show
-    review = Review.find_by(id: params[:id])
+    review = Review.find_by(camp_id: params[:camp_id])
     render json: ReviewSerializer.new(review).serialized_json
   end
 
