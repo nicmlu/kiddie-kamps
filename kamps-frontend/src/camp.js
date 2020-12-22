@@ -82,7 +82,7 @@ class Camp {
     // add contact info to card
     contactAddress.innerHTML += `Address: ${this.street_address}`;
     contactPhone.innerHTML += `Phone: ${this.phone}`;
-    contactWebsite.innerHTML += `<a href="${this.website}" target = "_blank"> Website: </a>`;
+    contactWebsite.innerHTML += `<a href="${this.website}" target = "_blank"> Click Here for Camp Website </a>`;
 
     // add card footer
     const cardFooter = document.createElement("div");
@@ -138,5 +138,41 @@ class Camp {
     cardFooter.appendChild(newReviewBtn);
     cardFooter.appendChild(allReviewsBtn);
     //debugger;
+  }
+
+  createReview(event) {
+    event.preventDefault();
+    const userApprove = document.querySelector("#approve").value;
+    const userComment = document.querySelector("#comment").value;
+    const userName = document.querySelector("#name").value;
+    const camp_id = document.querySelector("#camp_id").value;
+    const newReview = {
+      approve: userApprove,
+      comment: userComment,
+      name: userName,
+      camp_id: camp_id
+    };
+
+    // post request to add review to db
+    fetch(BASE_URL + "/reviews", {
+      method: "POST",
+      body: JSON.stringify(review),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+        // display review on review modal
+        .then(resp => resp.json())
+        .then(review => {
+          let r = new Review(
+            review.id,
+            review.comment,
+            review.approve,
+            review.name,
+            review.camp_id
+          );
+          u.renderReview();
+        })
+    });
   }
 }

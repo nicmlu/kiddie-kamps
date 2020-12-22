@@ -48,7 +48,7 @@ function showFormModal() {
   });
   //debugger;
   const reviewForm = document.getElementById("review-form");
-  reviewForm.addEventListener("submit", createReview);
+  reviewForm.addEventListener("submit", event => createReview(event));
 }
 
 // toggle between like/dislike icon on review form
