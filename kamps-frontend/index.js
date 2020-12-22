@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   fetchCamps();
+  //   addListenerstoCard();
 });
 
 reviews = [];
@@ -22,14 +23,14 @@ function fetchCamps() {
       camps["data"].forEach(camp => {
         // create new camp JS object
         let campObj = new Camp(
-          camp.attributes.name,
           camp.attributes.img_src,
+          camp.attributes.name,
           camp.attributes.description,
           camp.attributes.website,
           camp.attributes.borough,
-          camp.attributes.street_address,
           camp.attributes.zip,
-          camp.attributes.phone
+          camp.attributes.phone,
+          camp.attributes.street_address
         );
         campObj.createCampCard();
       });
@@ -39,19 +40,18 @@ function fetchCamps() {
 function getReviews() {}
 
 // show new review modal after button click and add event listener for new review form submission
-function showReviewModal() {
-  debugger;
-  const camp_id = parseInt(
-    event.target.parentElement.parentElement.parentElement.dataset.id
-  );
-  const camp_id_input = document.getElementById("review-form");
-  //debugger;
-  camp_id_input.innerHTML += `<input type="hidden" id="camp_id" name="camp_id" value=${camp_id}></br>`;
-  const newReviewBtn = document.getElementById("new-review-btn");
-  const addReviewModal = document.getElementById("add-modal");
-  $(addReviewModal).modal("show", {
+function showFormModal() {
+  // opens review form modal
+  const formModal = document.getElementById("add-modal");
+  $(formModal).modal("show", {
     backdrop: "static"
   });
   //debugger;
-  addReviewModal.addEventListener("submit", createReview);
+  const reviewForm = document.getElementById("review-form");
+  reviewForm.addEventListener("submit", createReview);
+}
+
+// toggle between like/dislike icon on review form
+function myFunction(x) {
+  x.classList.toggle("fa-thumbs-down");
 }

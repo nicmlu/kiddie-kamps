@@ -85,8 +85,22 @@
                     </div>
                     <div class="modal-body">
                         <form id="review-form" onsubmit="createReview();return false;">
+                                <label for="camp_id">Choose a Camp:</label><br>
+                                <select id="camp_id" name="camp_id">
+                                    <option value="1">43rd Street Kids Summer Camp</option>
+                                    <option value="2">Advantage Day Camp at Manhattan Plaza Racquet Club</option>
+                                    <option value="3">Campus Day Camp</option>
+                                    <option value="4">Cary Leeds Center for Tennis & Learning</option>
+                                    <option value="5">Mill Basin Day Camp</option>
+                                    <option value="6">Mosholu Day Camp</option>
+                                    <option value="7">Summer Camp at Lehman College</option>
+                                    <option value="8">Manhattan Fencing Center</option>
+                                    <option value="9">School of Rock - Queens</option>
+                                    <option value="10">Lavner Camps NYC</option>
+                                </select>
+                            <br>                
                             <br>
-                            <label>Name:</label>
+                            <label>Your Name:</label>
                             <input type="text" id="name"></br>
                             </br>
 
@@ -100,10 +114,13 @@
                             <!-- Use an element to toggle between a like/dislike icon -->
                             <i name="approve" id="approve" onclick="myFunction(this)" class="fa fa-thumbs-up fa-2x"></i>
                             </br>
+                            <br> 
+                            <div id= "select-div">
+
+                            </div>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn--success" type="submit">Add Review</button>
-                        <button class="btn btn--passive">Cancel</button>
                     </div>
                     </form>
                 </div>

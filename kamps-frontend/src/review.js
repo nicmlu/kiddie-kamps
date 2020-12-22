@@ -7,6 +7,5 @@ class Review {
     this.comment = comment;
     this.name = name;
     this.camp_id = camp_id;
-    this.adapter = new ReviewsAdapter();
   }
 }
