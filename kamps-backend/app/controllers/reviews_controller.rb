@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
   def create
     review = Review.new(review_params)
       if review.save
-        render json: ItemSerializer.new(review).serialized_json
+        render json: ReviewSerializer.new(review).serialized_json
       else
           render json: {errors: review.errors.full_messages}, status: :unprocessible_entity
       end

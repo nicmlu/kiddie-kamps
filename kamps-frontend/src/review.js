@@ -1,7 +1,8 @@
 class Review {
   static all = [];
 
-  constructor(approve, comment, name, camp_id) {
+  constructor(id, approve, comment, name, camp_id) {
+    this.id = id;
     this.approve = approve;
     this.comment = comment;
     this.name = name;

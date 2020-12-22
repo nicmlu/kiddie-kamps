@@ -71,6 +71,7 @@ function reviewFormSubmission(e) {
         review.name,
         review.camp_id
       );
+      alert("Review Saved!");
       r.renderReviews();
     });
 }
