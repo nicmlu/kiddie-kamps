@@ -30,7 +30,7 @@ class Review {
 
     let approved;
 
-    if ((rating = "yes")) {
+    if ((rating = "true")) {
       approved = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
     } else {
       approved = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;

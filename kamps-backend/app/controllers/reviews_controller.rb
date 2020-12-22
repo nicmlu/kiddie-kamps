@@ -15,15 +15,10 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   def create
-    if params[:camp_id]
-      @camp = Camp.find_by(camp_id: params[:camp_id])
-      @review = @camp.reviews.build(review_params)
-      if @review.save
-        render json: ReviewSerializer.new(review).serialized_hash
-      else 
-        alert("Review not saved!")
+    review = Review.new(review_params)
+      if review.save
+        render json: ItemSerializer.new(review).serialized_json
       end
-    end
   end
 
   # PATCH/PUT /reviews/1

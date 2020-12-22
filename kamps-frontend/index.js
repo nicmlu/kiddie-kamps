@@ -1,18 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   fetchCamps();
-  //   addListenerstoCard();
 });
 
 reviews = [];
 camps = [];
 
-const BASE_URL = "http://127.0.0.1:3000";
-
-// function start() {
-//   // start application and make a fetch request to /camps
-//   const camp = new Camp();
-//   camp.renderCamps();
-// }
+const BASE_URL = "http://localhost:3000";
 
 function fetchCamps() {
   fetch(`${BASE_URL}/camps`)
@@ -46,18 +39,13 @@ function showFormModal() {
   });
   //debugger;
   const reviewForm = document.getElementById("review-form");
-  debugger;
-  reviewForm.addEventListener("submit", createReview);
+  //debugger;
+  reviewForm.addEventListener("submit", e => createReview(e));
 }
 
-// toggle between like/dislike icon on review form
-function myFunction(x) {
-  x.classList.toggle("fa-thumbs-down");
-}
-
-function createReview() {
+function createReview(e) {
   debugger;
-  event.preventDefault();
+  e.preventDefault();
   const userApprove = document.querySelector("#approve").checked;
   const userComment = document.querySelector("#comment").value;
   const userName = document.querySelector("#name").value;
@@ -74,18 +62,14 @@ function createReview() {
     method: "POST",
     body: JSON.stringify(newReview),
     headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
+      "Content-Type": "application/json"
     }
   }) // display review on review modal
-    .then(resp => resp.json())
+    //.then(resp => resp.json())
     .then(newReview => {
-      let r = new Review(
-        newReview.approve,
-        newReview.comment,
-        newReview.name,
-        newReview.camp_id
-      );
+      console.log(newReview);
+      debugger;
+      let r = new Review(newReview);
       r.renderReviews();
     });
 }
