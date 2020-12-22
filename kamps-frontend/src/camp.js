@@ -107,12 +107,8 @@ class Camp {
 
     // add event listeners to footer buttons
 
-    newReviewBtn.addEventListener(
-      "click",
-      event => showFormModal(event),
-      false
-    );
-    allReviewsBtn.addEventListener("click", () => renderReviews(), false);
+    newReviewBtn.addEventListener("click", event => showFormModal(event));
+    allReviewsBtn.addEventListener("click", event => renderReviews(event));
 
     // Add newly created elements to the DOM
     campSection.appendChild(campDiv);

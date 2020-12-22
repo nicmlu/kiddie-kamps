@@ -44,7 +44,7 @@ function showFormModal() {
 }
 
 function createReview(e) {
-  debugger;
+  //debugger;
   e.preventDefault();
   const userApprove = document.querySelector("#approve").checked;
   const userComment = document.querySelector("#comment").value;
@@ -64,12 +64,92 @@ function createReview(e) {
     headers: {
       "Content-Type": "application/json"
     }
-  }) // display review on review modal
-    //.then(resp => resp.json())
+  }) // confirm review save
     .then(newReview => {
-      console.log(newReview);
-      debugger;
-      let r = new Review(newReview);
-      r.renderReviews();
+      alert("post created!");
+      closeReviewsModal();
     });
+
+  function closeReviewsModal() {
+    // closes review form modal
+    const reviewsModal = document.getElementById("all-modal");
+    $(reviewsModal).modal("hide");
+  }
+}
+
+//create reviews card and insert data
+function renderReviews() {
+  //debugger;
+  // grab review section
+  let reviewSection = document.getElementById("review-row");
+
+  //create review card div/area
+  let reviewDiv = document.createElement("div");
+
+  //create review card
+  let reviewCard = document.createElement("div");
+  reviewCard.classList.add("card");
+
+  //create header element for card
+  let headerDiv = document.createElement("div");
+  headerDiv.classList.add("card-header");
+
+  // add kid approved icon to review card
+  let rating = `${this.approve}`;
+
+  let approved;
+
+  if ((rating = "true")) {
+    approved = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
+  } else {
+    approved = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;
+  }
+  //debugger;
+
+  //create review card content div/area
+  let reviewBodyDiv = document.createElement("div");
+  reviewBodyDiv.classList.add("card-body");
+
+  //create review card block quote div
+  let reviewBodyBlock = document.createElement("blockquote");
+  reviewBodyBlock.classList.add("blockquote-mb-0");
+
+  //create review comment element
+  let reviewBodyElem = document.createElement("p");
+
+  //add review comment to element
+  reviewBodyElem.innerHTML += `${this.comment}`;
+
+  //create review comment footer
+  let reviewFooterElem = document.createElement("footer");
+  reviewFooterElem.classList.add("blockquote-footer");
+
+  //add review author to comment footer
+  reviewFooterElem.innerHTML += `${this.name}`;
+
+  // Add newly created elements to the DOM
+  //debugger;
+  reviewSection.appendChild(reviewDiv);
+
+  reviewDiv.appendChild(reviewCard);
+
+  reviewCard.appendChild(headerDiv);
+
+  reviewCard.appendChild(reviewBodyDiv);
+
+  reviewBodyDiv.appendChild(reviewBodyBlock);
+
+  reviewBodyBlock.appendChild(reviewBodyElem);
+
+  reviewBodyBlock.appendChild(reviewFooterElem);
+}
+
+function showReviewsModal() {
+  // fetches reviews and inserts data into modal
+  renderReviews();
+  // opens camp reviews modal
+  const allReviewsModal = document.getElementById("all-modal");
+  $(allReviewsModal).modal("show", {
+    backdrop: "static"
+  });
 }
