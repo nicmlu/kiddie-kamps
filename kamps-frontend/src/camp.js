@@ -165,13 +165,13 @@ class Camp {
         .then(resp => resp.json())
         .then(review => {
           let r = new Review(
-            review.id,
-            review.comment,
             review.approve,
+            review.comment,
             review.name,
             review.camp_id
           );
-          u.renderReview();
+          debugger;
+          r.renderReview();
         })
     });
   }
