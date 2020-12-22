@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 reviews = [];
 camps = [];
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "http://127.0.0.1:3000";
 
 function fetchCamps() {
   fetch(`${BASE_URL}/camps`)
@@ -40,34 +40,38 @@ function showFormModal() {
   //debugger;
   const reviewForm = document.getElementById("review-form");
   //debugger;
-  reviewForm.addEventListener("submit", e => createReviewFormHandler(e));
+  reviewForm.addEventListener("submit", e => reviewFormSubmission);
 }
 
-function createReviewFormHandler(e) {
+function reviewFormSubmission(e) {
   e.preventDefault();
-  const userApprove = document.querySelector("#approve").checked;
-  const userComment = document.querySelector("#comment").value;
-  const userName = document.querySelector("#name").value;
-  const camp_id = document.querySelector("#camp_id").value;
-  createReview(userApprove, userComment, userName, camp_id);
-}
+  let userApprove = document.querySelector("#approve").checked;
+  let userComment = document.querySelector("#comment").value;
+  let userName = document.querySelector("#name").value;
+  let camp_id = document.querySelector("#camp_id").value;
 
-function createReview(userApprove, userComment, userName, camp_id) {
-  const formData = { userApprove, userComment, userName, camp_id };
+  let formData = {
+    approve: userApprove,
+    comment: userComment,
+    name: userName,
+    camp_id: camp_id
+  };
   debugger;
-  fetch("http://localhost:3000/reviews", {
+  fetch(`${BASE_URL}/reviews`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
     body: JSON.stringify(formData)
   })
     .then(response => response.json())
     .then(review => {
-      console.log(review);
-      const reviewData = review.data;
-      let newReview = new Review(reviewData);
-      document.querySelector(
-        "#review-row"
-      ).innerHTML += newReview.renderReviews();
+      let r = new Review(
+        review.id,
+        review.approve,
+        review.comment,
+        review.name,
+        review.camp_id
+      );
+      r.renderReviews();
     });
 }
 
