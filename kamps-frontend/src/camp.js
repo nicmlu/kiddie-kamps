@@ -7,7 +7,8 @@ class Camp {
     description,
     zip,
     phone,
-    street_address
+    street_address,
+    id
   ) {
     this.img_src = img_src;
     this.name = name;
@@ -17,17 +18,19 @@ class Camp {
     this.zip = zip;
     this.phone = phone;
     this.street_address = street_address;
+    this.id = id;
     //this.adapter = new CampsAdapter();
   }
 
   createCampCard() {
-    //debugger;
     // grab camp section
+    debugger;
     const campSection = document.querySelector(".row");
 
     //create camp card div/area
     const campDiv = document.createElement("div");
-    campDiv.setAttribute("data-id", this.id);
+    campDiv.className = "camp-card";
+    campDiv.setAttribute("data-id", `${this.id}`);
     campDiv.classList.add("col-s12-m6-l4");
     campDiv.classList.add("col-lg-3");
     campDiv.classList.add("col-md-6");
@@ -36,7 +39,7 @@ class Camp {
 
     //create camp card div
     const campCard = document.createElement("div");
-    campCard.classList.add("card");
+    campCard.className = "card";
 
     //create image element for card
     const imgElem = document.createElement("img");
@@ -49,7 +52,7 @@ class Camp {
 
     //create card content div/area
     const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
+    cardBody.className = "card-body";
 
     //create card title element
     const cardTitle = document.createElement("h4");
@@ -81,7 +84,7 @@ class Camp {
     // add contact info to card
     contactAddress.innerHTML += `Address: ${this.street_address}`;
     contactPhone.innerHTML += `Phone: ${this.phone}`;
-    contactWebsite.innerHTML += `<a href="${this.website}" target = "_blank"> Website </a>`;
+    contactWebsite.innerHTML += `<a href="${this.website}" target = "_blank"> Website: </a>`;
 
     // add card footer
     const cardFooter = document.createElement("div");
