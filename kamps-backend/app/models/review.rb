@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
-    belongs_to :menu, optional: true
+    extend Forwardable
+    belongs_to :camp, optional: true
     validates :approve, presence: true
     validates :comment, presence: true
     validates :name, presence: true
