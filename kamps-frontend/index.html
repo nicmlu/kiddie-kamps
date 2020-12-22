@@ -84,7 +84,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="review-form" onsubmit="createReview();return false;">
+                        <form id="review-form">
                                 <label for="camp_id">Choose a Camp:</label><br>
                                 <select id="camp_id" name="camp_id">
                                     <option value="1">43rd Street Kids Summer Camp</option>
@@ -110,9 +110,9 @@
                             </br>
 
                             <br>
-                            <label>Kid Approved:</label>
-                            <!-- Use an element to toggle between a like/dislike icon -->
-                            <i name="approve" id="approve" onclick="myFunction(this)" class="fa fa-thumbs-up fa-2x"></i>
+                            
+                            <label for="approved">Check if Kid Approved: </label>
+                            <input type="checkbox" id="approve" name="approve" defaultChecked="">
                             </br>
                             <br> 
                             <div id= "select-div">

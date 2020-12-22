@@ -37,8 +37,6 @@ function fetchCamps() {
     });
 }
 
-function getReviews() {}
-
 // show new review modal after button click and add event listener for new review form submission
 function showFormModal() {
   // opens review form modal
@@ -48,10 +46,46 @@ function showFormModal() {
   });
   //debugger;
   const reviewForm = document.getElementById("review-form");
-  reviewForm.addEventListener("submit", event => createReview(event));
+  debugger;
+  reviewForm.addEventListener("submit", createReview);
 }
 
 // toggle between like/dislike icon on review form
 function myFunction(x) {
   x.classList.toggle("fa-thumbs-down");
+}
+
+function createReview() {
+  debugger;
+  event.preventDefault();
+  const userApprove = document.querySelector("#approve").checked;
+  const userComment = document.querySelector("#comment").value;
+  const userName = document.querySelector("#name").value;
+  const camp_id = document.querySelector("#camp_id").value;
+  const newReview = {
+    approve: userApprove,
+    comment: userComment,
+    name: userName,
+    camp_id: camp_id
+  };
+
+  //   postFetchReview(newReview);
+  fetch(`${BASE_URL}/reviews`, {
+    method: "POST",
+    body: JSON.stringify(newReview),
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    }
+  }) // display review on review modal
+    .then(resp => resp.json())
+    .then(newReview => {
+      let r = new Review(
+        newReview.approve,
+        newReview.comment,
+        newReview.name,
+        newReview.camp_id
+      );
+      r.renderReviews();
+    });
 }
