@@ -22,7 +22,6 @@ class Camp {
 
   createCampCard() {
     // grab camp section
-    //debugger;
     const campSection = document.querySelector(".row");
 
     //create camp card div/area
@@ -33,7 +32,7 @@ class Camp {
     campDiv.classList.add("col-lg-3");
     campDiv.classList.add("col-md-6");
     campDiv.classList.add("mb-4");
-    campDiv.className = "card-group";
+    campDiv.classList.add("card-group");
 
     //create camp card div
     const campCard = document.createElement("div");
@@ -42,7 +41,7 @@ class Camp {
     //create image element for card
     const imgElem = document.createElement("img");
     imgElem.classList.add("card-img-top");
-    imgElem.className = "img-thumbnail";
+    imgElem.classList.add("img-thumbnail");
 
     //add camp image to card
     const pic = `${this.img_src}`;
@@ -50,7 +49,7 @@ class Camp {
 
     //create card content div/area
     const cardBody = document.createElement("div");
-    cardBody.className = "card-body";
+    cardBody.classList.add("card-body");
 
     //create card title element
     const cardTitle = document.createElement("h4");
@@ -86,7 +85,7 @@ class Camp {
 
     // add card footer
     const cardFooter = document.createElement("div");
-    cardFooter.className = "card-footer";
+    cardFooter.classList.add("card-footer");
 
     // add footer buttons
     const newReviewBtn = document.createElement("button");
@@ -107,8 +106,12 @@ class Camp {
 
     // add event listeners to footer buttons
 
-    newReviewBtn.addEventListener("click", event => showFormModal(event));
-    allReviewsBtn.addEventListener("click", event => renderReviews(event));
+    newReviewBtn.addEventListener(
+      "click",
+      event => showFormModal(event),
+      false
+    );
+    allReviewsBtn.addEventListener("click", e => renderReviews(e), false);
 
     // Add newly created elements to the DOM
     campSection.appendChild(campDiv);
@@ -134,5 +137,15 @@ class Camp {
     cardFooter.appendChild(newReviewBtn);
     cardFooter.appendChild(allReviewsBtn);
     //debugger;
+  } //create reviews card and insert data
+
+  showReviewsModal() {
+    // fetches reviews and inserts data into modal
+    renderReviews();
+    // opens camp reviews modal
+    const allReviewsModal = document.getElementById("all-modal");
+    $(allReviewsModal).modal("show", {
+      backdrop: "static"
+    });
   }
 }

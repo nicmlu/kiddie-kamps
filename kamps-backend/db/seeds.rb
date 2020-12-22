@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Camp.destroy_all
 Review.destroy_all
+Camp.destroy_all
 
 # Camp objects 
 camp1 = Camp.create({name: "43rd Street Kids Summer Camp", description: "Activities include swim lessons, art, music, story-telling, gardening, cooking, games, sand and water play, science experiments, creative dance, and more.", street_address: "484 West 43rd Street",website: "https://43rdstreetkidspreschool.org/summer-program-overview-top/", borough: "Manhattan", zip: 10036 , phone:"212-564-7496", img_src:"assets/images/43-logo.png"})

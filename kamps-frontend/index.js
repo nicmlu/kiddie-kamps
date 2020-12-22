@@ -40,116 +40,71 @@ function showFormModal() {
   //debugger;
   const reviewForm = document.getElementById("review-form");
   //debugger;
-  reviewForm.addEventListener("submit", e => createReview(e));
+  reviewForm.addEventListener("submit", e => createReviewFormHandler(e));
 }
 
-function createReview(e) {
-  //debugger;
+function createReviewFormHandler(e) {
   e.preventDefault();
   const userApprove = document.querySelector("#approve").checked;
   const userComment = document.querySelector("#comment").value;
   const userName = document.querySelector("#name").value;
   const camp_id = document.querySelector("#camp_id").value;
-  const newReview = {
-    approve: userApprove,
-    comment: userComment,
-    name: userName,
-    camp_id: camp_id
-  };
+  createReview(userApprove, userComment, userName, camp_id);
+}
 
-  //   postFetchReview(newReview);
-  fetch(`${BASE_URL}/reviews`, {
+function createReview(userApprove, userComment, userName, camp_id) {
+  const formData = { userApprove, userComment, userName, camp_id };
+  debugger;
+  fetch("http://localhost:3000/reviews", {
     method: "POST",
-    body: JSON.stringify(newReview),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }) // confirm review save
-    .then(newReview => {
-      alert("post created!");
-      closeReviewsModal();
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData)
+  })
+    .then(response => response.json())
+    .then(review => {
+      console.log(review);
+      const reviewData = review.data;
+      let newReview = new Review(reviewData);
+      document.querySelector(
+        "#review-row"
+      ).innerHTML += newReview.renderReviews();
     });
-
-  function closeReviewsModal() {
-    // closes review form modal
-    const reviewsModal = document.getElementById("all-modal");
-    $(reviewsModal).modal("hide");
-  }
 }
 
-//create reviews card and insert data
-function renderReviews() {
-  //debugger;
-  // grab review section
-  let reviewSection = document.getElementById("review-row");
+// function createReview(userApprove, userComment, userName, camp_id) {
+//   const newReviewData = {
+//     approve: userApprove,
+//     comment: userComment,
+//     name: userName,
+//     camp_id: camp_id
+//   };
+//   debugger;
+//   //   postFetchReview(newReview);
+//   fetch(`${BASE_URL}/reviews`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(newReviewData)
+//   })
+//     .then(response => response.json())
+//     // confirm review save
+//     .then(review => {
+//       let r = new Review(
+//         review.id,
+//         review.comment,
+//         review.approve,
+//         review.name,
+//         review.camp_id
+//       );
+//       r.renderReviews();
+//       alert("Review Created!");
+//       closeReviewsModal();
+//     });
 
-  //create review card div/area
-  let reviewDiv = document.createElement("div");
-
-  //create review card
-  let reviewCard = document.createElement("div");
-  reviewCard.classList.add("card");
-
-  //create header element for card
-  let headerDiv = document.createElement("div");
-  headerDiv.classList.add("card-header");
-
-  // add kid approved icon to review card
-  let rating = `${this.approve}`;
-
-  let approved;
-
-  if ((rating = "true")) {
-    approved = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
-  } else {
-    approved = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;
-  }
-  //debugger;
-
-  //create review card content div/area
-  let reviewBodyDiv = document.createElement("div");
-  reviewBodyDiv.classList.add("card-body");
-
-  //create review card block quote div
-  let reviewBodyBlock = document.createElement("blockquote");
-  reviewBodyBlock.classList.add("blockquote-mb-0");
-
-  //create review comment element
-  let reviewBodyElem = document.createElement("p");
-
-  //add review comment to element
-  reviewBodyElem.innerHTML += `${this.comment}`;
-
-  //create review comment footer
-  let reviewFooterElem = document.createElement("footer");
-  reviewFooterElem.classList.add("blockquote-footer");
-
-  //add review author to comment footer
-  reviewFooterElem.innerHTML += `${this.name}`;
-
-  // Add newly created elements to the DOM
-  //debugger;
-  reviewSection.appendChild(reviewDiv);
-
-  reviewDiv.appendChild(reviewCard);
-
-  reviewCard.appendChild(headerDiv);
-
-  reviewCard.appendChild(reviewBodyDiv);
-
-  reviewBodyDiv.appendChild(reviewBodyBlock);
-
-  reviewBodyBlock.appendChild(reviewBodyElem);
-
-  reviewBodyBlock.appendChild(reviewFooterElem);
+function closeReviewsModal() {
+  // closes review form modal
+  const reviewsModal = document.getElementById("all-modal");
+  $(reviewsModal).modal("hide");
 }
-
-function showReviewsModal() {
-  // fetches reviews and inserts data into modal
-  renderReviews();
-  // opens camp reviews modal
-  const allReviewsModal = document.getElementById("all-modal");
-  $(allReviewsModal).modal("show", {
-    backdrop: "static"
-  });
-}
+// }
