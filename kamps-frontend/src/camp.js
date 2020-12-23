@@ -146,7 +146,7 @@ class Camp {
   // retrieve all camp reviews
   fetchCampReviews(e) {
     e.preventDefault();
-    debugger;
+    //debugger;
     fetch(`http://127.0.0.1:3000/reviews`)
       .then(resp => resp.json())
       .then(reviews => {

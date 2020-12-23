@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   fetchCamps();
+  changeTitle();
 });
 
 reviews = [];
@@ -113,3 +114,15 @@ function closeReviewsModal() {
   $(reviewsModal).modal("hide");
 }
 // }
+
+function changeTitle() {
+  btn = document.querySelector("#change-title");
+
+  btn.addEventListener("click", titleChange);
+}
+
+function titleChange() {
+  title = document.querySelector(".navbar-brand");
+
+  title.innerHTML = "Get my Children Out of Here!";
+}

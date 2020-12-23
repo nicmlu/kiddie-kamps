@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
+    #byebug
     reviews = Review.all
     render json: ReviewSerializer.new(reviews)
   end
