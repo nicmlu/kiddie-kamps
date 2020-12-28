@@ -122,9 +122,7 @@ class Camp {
     allReviewsBtn.innerHTML = "See Reviews";
 
     // add event listeners to footer buttons
-
     newReviewBtn.addEventListener("click", showFormModal.bind(this));
-
     allReviewsBtn.addEventListener("click", fetchCampReviews.bind(this));
 
     // Add newly created elements to the DOM
@@ -156,7 +154,6 @@ class Camp {
 function showFormModal() {
   // opens review form modal
   const formModal = document.getElementById("add-modal");
-  const form = document.getElementById("review-form");
   $(formModal).modal("show", {
     backdrop: "static"
   });
@@ -171,7 +168,7 @@ function showFormModal() {
 
 function reviewFormSubmission(e) {
   e.preventDefault();
-  debugger;
+  // debugger;
   const formModal = document.getElementById("add-modal");
 
   let userApprove = e.target.approve.value;
@@ -193,7 +190,7 @@ function reviewFormSubmission(e) {
   })
     .then(response => response.json())
     .then(review => {
-      debugger;
+      // debugger;
       let r = new Review(
         review.data.id,
         review.data.attributes.approve,
@@ -202,7 +199,13 @@ function reviewFormSubmission(e) {
         review.data.attributes.camp.id
       );
       alert("Review Saved!");
+      document.getElementById("review-form").reset();
       $(formModal).modal("hide");
+      location.reload();
+      // const container = document.querySelector("#review-row");
+      // debugger;
+      // removeAllChildNodes(container);
+      // fetchAndLoadCamp();
     });
 }
 
@@ -215,7 +218,7 @@ function fetchCampReviews(e) {
   fetch(`http://127.0.0.1:3000/reviews`)
     .then(resp => resp.json())
     .then(reviews => {
-      debugger;
+      // debugger;
       reviews.data.forEach(review => {
         let reviewCampId = review.attributes.camp.id;
         if (selectedCampId == reviewCampId) {
