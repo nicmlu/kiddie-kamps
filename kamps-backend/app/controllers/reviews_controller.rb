@@ -10,8 +10,15 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1
   def show
-    review = Review.find_by(camp_id: params[:camp_id])
-    render json: ReviewSerializer.new(review).serialized_json
+        if params[:camp_id]
+          byebug
+            @reviews = Review.where(camp_id: params[:camp_id])
+        else
+            let reviewDiv = document.getElementbyId("review-row")
+            reviewDiv.innerHTML += "There are no reviews for this camp."
+        end
+        
+        render json: RecipeSerializer.new(@recipes).serialized_json
   end
 
   # POST /reviews

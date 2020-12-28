@@ -13,12 +13,6 @@
     <!-- Custom styles for this template -->
     <link href="css/heroic-features.css" rel="stylesheet" />
     
-    <script src="src/camp.js"></script>
-    <script src="src/review.js"></script>
-    <!-- <script src="src/adapters/campsAdapter.js" defer></script>-->
-    <!-- <script src="src/adapters/reviewsAdapter.js" defer></script>-->
-    <script src="index.js"></script>
-    
     <!--Let browser know website is optimized for mobile-->
     
     <title>Kiddie Kamps NYC</title>
@@ -83,7 +77,7 @@
                     </div>
                     <div class="modal-body">
                         <form id="review-form">
-                                <label for="camp_id">Choose a Camp:</label><br>
+                                <!--<label for="camp_id">Choose a Camp:</label><br>
                                 <select id="camp_id" name="camp_id">
                                     <option value="1">43rd Street Kids Summer Camp</option>
                                     <option value="2">Advantage Day Camp at Manhattan Plaza Racquet Club</option>
@@ -95,7 +89,7 @@
                                     <option value="8">Manhattan Fencing Center</option>
                                     <option value="9">School of Rock - Queens</option>
                                     <option value="10">Lavner Camps NYC</option>
-                                </select>
+                                </select> -->
                             <br>                
                             <br>
                             <label>Your Name:</label>
@@ -113,14 +107,9 @@
                             <input type="checkbox" id="approve" name="approve" defaultChecked="">
                             </br>
                             <br> 
-                            <div id= "select-div">
-
-                            </div>
+                            <button type="submit" id="submit-form">Add Review</button>
+                        </form>
                     </div>
-                    <div class="modal-footer">
-                        <button class="btn btn--success" type="submit">Add Review</button>
-                    </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -160,6 +149,13 @@
             </div>
         </div>
     </footer>
+    
+    <script src="src/components/camp.js"></script>
+    <script src="src/components/review.js"></script>
+    <script src="src/components/app.js"></script>
+    <script src="src/adapters/campsAdapter.js"></script>
+    <script src="src/adapters/reviewsAdapter.js"></script>
+    <script src="index.js"></script>
 
     <!--Import jQuery-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

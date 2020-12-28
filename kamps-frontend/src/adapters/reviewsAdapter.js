@@ -1,7 +1,9 @@
 // fetches from Reviews API
 class ReviewsAdapter {
   constructor() {
-    this.baseURL = "http://127.0.0.1:3000/reviews";
+    debugger;
+    camp_id = parseInt(this.form.camp_id.value);
+    this.baseURL = `http://127.0.0.1:3000/camps/${camp_id}/reviews`;
   }
 
   getReviews() {
@@ -10,15 +12,15 @@ class ReviewsAdapter {
       .then(json => json.data);
   }
 
-  postReviews(data) {
-    return fetch(this.baseURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
-      .then(resp => resp.json())
-      .catch(err => alert(err));
-  }
+  // postReview(data) {
+  //   return fetch(this.baseURL, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(data)
+  //   })
+  //     .then(resp => resp.json())
+  //     .catch(err => alert(err));
+  // }
 }

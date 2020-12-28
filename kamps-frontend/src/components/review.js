@@ -1,7 +1,8 @@
 class Review {
   static all = [];
 
-  constructor(approve, comment, name, camp_id) {
+  constructor(id, approve, comment, name, camp_id) {
+    this.id = parseInt(id);
     this.approve = approve;
     this.comment = comment;
     this.name = name;
@@ -10,8 +11,8 @@ class Review {
 
   //create reviews card and insert data
 
-  renderReviews(e) {
-    //debugger;
+  createReviewCard() {
+    debugger;
     // grab review section
     let reviewSection = document.getElementById("review-row");
 
@@ -74,16 +75,12 @@ class Review {
     reviewBodyBlock.appendChild(reviewBodyElem);
 
     reviewBodyBlock.appendChild(reviewFooterElem);
+  }
 
+  showReviewsModal() {
     const allReviewsModal = document.getElementById("all-modal");
     $(allReviewsModal).modal("show", {
       backdrop: "static"
     });
-  }
-
-  showReviewsModal() {
-    // fetches reviews and inserts data into modal
-    renderReviews();
-    // opens camp reviews modal
   }
 }
