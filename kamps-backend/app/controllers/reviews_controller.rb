@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
+    #@camp = Camp.find_by(id: params[:camp_id])
     reviews = Review.all
     render json: ReviewSerializer.new(reviews)
   end
@@ -15,11 +16,11 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   def create
-    @camp = Camp.find_by(camp_id: params[:camp_id])
+    @camp = Camp.find_by(id: params[:camp_id])
     @review = @camp.reviews.create(review_params)
     #review = Review.new(review_params)
     if @review.save 
-    render json: ReviewSerializer.new(review).serialized_json
+    render json: ReviewSerializer.new(@review).serialized_json
     else 
     render json: @review.errors, status: :unprocessable_entity
     end 

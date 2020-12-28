@@ -201,3 +201,18 @@ approved = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
 } else {
 approved = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;
 }
+
+let currentRating = `${review.approve}`;
+
+const approved = currentRating;
+
+let approvedArea;
+
+switch (approved) {
+case "Yes":
+approvedArea = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
+break;
+case "No":
+approvedArea = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;
+break;
+}

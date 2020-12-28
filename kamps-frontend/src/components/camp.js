@@ -163,7 +163,7 @@ function showFormModal() {
 
   const reviewForm = document.getElementById("review-form");
 
-  reviewForm.innerHTML += `<input id="camp_id" name="camp_id" value=${this.id}> </input>`;
+  reviewForm.innerHTML += `<input type="hidden" id="camp_id" name="camp_id" value=${this.id}> </input>`;
   reviewForm.addEventListener("submit", e => reviewFormSubmission(e));
 }
 
@@ -193,6 +193,7 @@ function reviewFormSubmission(e) {
   })
     .then(response => response.json())
     .then(review => {
+      debugger;
       let r = new Review(
         review.data.id,
         review.data.attributes.approve,
@@ -214,8 +215,9 @@ function fetchCampReviews(e) {
   fetch(`http://127.0.0.1:3000/reviews`)
     .then(resp => resp.json())
     .then(reviews => {
+      debugger;
       reviews.data.forEach(review => {
-        let reviewCampId = review.attributes.camp_id;
+        let reviewCampId = review.attributes.camp.id;
         if (selectedCampId == reviewCampId) {
           selectedCampReviews.push(
             new Review(
@@ -223,7 +225,7 @@ function fetchCampReviews(e) {
               review.attributes.approve,
               review.attributes.comment,
               review.attributes.name,
-              review.attributes.camp_id
+              review.attributes.camp.id
             )
           );
         }
