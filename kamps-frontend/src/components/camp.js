@@ -215,7 +215,6 @@ function fetchCampReviews(e) {
       reviews.data.forEach(review => {
         let reviewCampId = review.attributes.camp.id;
         if (selectedCampId == reviewCampId) {
-          debugger;
           selectedCampReviews.push(
             new Review(
               review.id,
@@ -236,13 +235,12 @@ function fetchCampReviews(e) {
 //create reviews card and insert data
 
 function createReviewCard(review) {
-  debugger;
   // grab review section
   let reviewSection = document.getElementById("review-row");
 
   //create review card div/area
   let reviewDiv = document.createElement("div");
-  reviewDiv.className = `${review.id}`;
+  reviewDiv.setAttribute("data-id", `${review.id}`);
 
   //create review card
   let reviewCard = document.createElement("div");
@@ -255,13 +253,12 @@ function createReviewCard(review) {
   //create delete button for review card
   let deleteBtn = document.createElement("button");
   deleteBtn.innerHTML += `Delete`;
-  deleteBtn.addEventListener("click", deleteReview.bind(this));
+  deleteBtn.addEventListener("click", deleteReview);
 
-  // add kid approved icon to review card
+  // add kid approved icon to review card header
   let currentRating = `${review.approve}`;
 
   const approved = currentRating;
-  // debugger;
 
   let approvedArea;
 
@@ -274,7 +271,8 @@ function createReviewCard(review) {
       break;
   }
 
-  //debugger;
+  //add delete button to review card heading
+  headerDiv.append(deleteBtn);
 
   //create review card content div/area
   let reviewBodyDiv = document.createElement("div");
@@ -298,7 +296,6 @@ function createReviewCard(review) {
   reviewFooterElem.innerHTML += `${review.name}`;
 
   // Add newly created elements to the DOM
-  //debugger;
   reviewSection.appendChild(reviewDiv);
 
   reviewDiv.appendChild(reviewCard);
@@ -330,5 +327,17 @@ function showReviewsModal() {
 }
 
 function deleteReview() {
-  debugger;
+  const reviewId = parseInt(
+    event.target.parentElement.parentElement.parentElement.dataset.id
+  );
+  const reviewModal = document.getElementById("all-modal");
+  fetch(`http://127.0.0.1:3000/reviews/${reviewId}`, {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json"
+    }
+  });
+  // .then(res => res.json());
+  alert("Review Deleted!");
+  $(reviewModal).modal("hide");
 }
