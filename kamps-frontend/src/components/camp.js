@@ -156,13 +156,14 @@ class Camp {
 function showFormModal() {
   // opens review form modal
   const formModal = document.getElementById("add-modal");
+  const form = document.getElementById("review-form");
   $(formModal).modal("show", {
     backdrop: "static"
   });
 
   const reviewForm = document.getElementById("review-form");
 
-  reviewForm.innerHTML += `<input type="hidden" id="camp_id" name="camp_id" value=${this.id}></input>`;
+  reviewForm.innerHTML += `<input id="camp_id" name="camp_id" value=${this.id}> </input>`;
   reviewForm.addEventListener("submit", e => reviewFormSubmission(e));
 }
 
@@ -170,6 +171,7 @@ function showFormModal() {
 
 function reviewFormSubmission(e) {
   e.preventDefault();
+  debugger;
   const formModal = document.getElementById("add-modal");
 
   let userApprove = e.target.approve.value;
@@ -184,7 +186,7 @@ function reviewFormSubmission(e) {
     camp_id: parseInt(camp_id)
   };
 
-  fetch(`http://127.0.0.1:3000/camps/${camp_id}/reviews`, {
+  fetch(`http://127.0.0.1:3000/reviews`, {
     method: "POST",
     headers: { Accept: "application/json", "Content-Type": "application/json" },
     body: JSON.stringify(data)
@@ -213,7 +215,7 @@ function fetchCampReviews(e) {
     .then(resp => resp.json())
     .then(reviews => {
       reviews.data.forEach(review => {
-        let reviewCampId = review.attributes.camp.id;
+        let reviewCampId = review.attributes.camp_id;
         if (selectedCampId == reviewCampId) {
           selectedCampReviews.push(
             new Review(
@@ -221,13 +223,14 @@ function fetchCampReviews(e) {
               review.attributes.approve,
               review.attributes.comment,
               review.attributes.name,
-              review.attributes.camp.id
+              review.attributes.camp_id
             )
           );
         }
       });
       const container = document.querySelector("#review-row");
       removeAllChildNodes(container);
+      // debugger;
       selectedCampReviews.forEach(review => createReviewCard(review));
     });
 }
@@ -331,6 +334,7 @@ function deleteReview() {
     event.target.parentElement.parentElement.parentElement.dataset.id
   );
   const reviewModal = document.getElementById("all-modal");
+
   fetch(`http://127.0.0.1:3000/reviews/${reviewId}`, {
     method: "DELETE",
     headers: {
