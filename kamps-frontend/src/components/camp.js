@@ -37,6 +37,7 @@ class Camp {
   fetchAndLoadCamp() {
     this.campsAdapter.getCamps().then(camps => {
       camps.data.forEach(camp => {
+        // debugger;
         let campObj = new Camp(
           camp.id,
           camp.attributes.img_src,
@@ -44,9 +45,9 @@ class Camp {
           camp.attributes.description,
           camp.attributes.website,
           camp.attributes.borough,
+          camp.attributes.street_address,
           camp.attributes.zip,
-          camp.attributes.phone,
-          camp.attributes.street_address
+          camp.attributes.phone
         );
         campObj.createCampCard();
       });
@@ -54,6 +55,7 @@ class Camp {
   }
 
   createCampCard() {
+    // debugger;
     // grab camp section
     const campSection = document.querySelector(".row");
 
@@ -165,7 +167,7 @@ class Camp {
 }
 
 function showFormModal() {
-  debugger;
+  // debugger;
   // opens review form modal
   const formModal = document.getElementById("add-modal");
   $(formModal).modal("show", {
@@ -174,9 +176,9 @@ function showFormModal() {
 
   //const camp_id = `${this.id}`;
   //debugger;
-  debugger;
+  // debugger;
   const reviewForm = document.getElementById("review-form");
-  debugger;
+  // debugger;
   reviewForm.innerHTML += `<input type="hidden" id="camp_id" name="camp_id" value=${this.id}></input>`;
   reviewForm.addEventListener("submit", e => reviewFormSubmission(e));
 }
@@ -185,6 +187,7 @@ function showFormModal() {
 
 function reviewFormSubmission(e) {
   e.preventDefault();
+  debugger;
   let userApprove = e.target.approve.value;
   let userComment = e.target.comment.value;
   let userName = e.target.name.value;
@@ -228,11 +231,11 @@ function fetchCampReviews(e) {
       reviews.data.forEach(review => {
         const reviewCampId = review.attributes.camp.id;
         if (selectedCampId == reviewCampId) {
-          debugger;
+          // debugger;
           selectedCampReviews.push(
             new Review(
               review.id,
-              review.attributes.approve.checked,
+              review.attributes.approve,
               review.attributes.comment,
               review.attributes.name,
               review.attributes.camp.id
@@ -268,7 +271,7 @@ function createReviewCard(review) {
 
   let approved;
 
-  if ((rating = "true")) {
+  if ((rating = "Yes")) {
     approved = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
   } else {
     approved = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;

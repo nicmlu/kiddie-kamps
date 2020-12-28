@@ -15915,3 +15915,528 @@ Processing by ReviewsController#index as */*
 Completed 200 OK in 58ms (Views: 54.2ms | ActiveRecord: 2.9ms | Allocations: 25275)
 
 
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:23:54 -0500
+Processing by CampsController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mCamp Load (3.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 123ms (Views: 112.1ms | ActiveRecord: 8.1ms | Allocations: 13567)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:24:24 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (1.3ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 94ms (Views: 88.1ms | ActiveRecord: 3.9ms | Allocations: 12918)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:25:01 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (1.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 69ms (Views: 64.5ms | ActiveRecord: 3.6ms | Allocations: 12918)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:27:02 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (1.6ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 397ms (Views: 377.7ms | ActiveRecord: 6.5ms | Allocations: 12919)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:27:30 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 94ms (Views: 92.0ms | ActiveRecord: 2.0ms | Allocations: 12918)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:28:10 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 60ms (Views: 56.7ms | ActiveRecord: 2.8ms | Allocations: 12918)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:28:56 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 2.0ms | Allocations: 12918)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:32:35 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 1.6ms | Allocations: 12918)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:33:24 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (0.4ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 60ms (Views: 54.0ms | ActiveRecord: 5.5ms | Allocations: 12918)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:34:29 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 2.1ms | Allocations: 12918)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:36:18 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (2.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 162ms (Views: 146.2ms | ActiveRecord: 4.2ms | Allocations: 12919)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:39:08 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (1.8ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 72ms (Views: 63.0ms | ActiveRecord: 3.8ms | Allocations: 12918)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:39:33 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (0.3ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 2.2ms | Allocations: 12918)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2020-12-28 03:39:38 -0500
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (1.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+Completed 200 OK in 64ms (Views: 59.8ms | ActiveRecord: 3.4ms | Allocations: 25275)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:41:28 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (1.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 55ms (Views: 47.6ms | ActiveRecord: 3.1ms | Allocations: 12918)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2020-12-28 03:41:29 -0500
+Processing by ReviewsController#index as */*
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+  [1m[36mCACHE Camp Load (0.0ms)[0m  [1m[34mSELECT "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:7:in `index'
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 1.7ms | Allocations: 25230)
+
+
+Started GET "/camps" for 127.0.0.1 at 2020-12-28 03:42:40 -0500
+Processing by CampsController#index as */*
+  [1m[36mCamp Load (0.3ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 1]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 2]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 3]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 4]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 5]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 6]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 8]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 9]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."camp_id" = ?[0m  [["camp_id", 10]]
+  ↳ app/controllers/camps_controller.rb:7:in `index'
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 2.4ms | Allocations: 12918)
+
+
