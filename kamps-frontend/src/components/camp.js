@@ -27,12 +27,12 @@ class Camp {
     // this.fetchAndLoadCamps();
   }
 
-  initBindingsandEventListeners() {
-    this.newReview = document.getElementById("new-review-btn");
-    this.newReview.addEventListener("click", this.showFormModal.bind(this));
-    this.allReviews = document.getElementById("all-reviews-btn");
-    this.allReviews.addEventListener("click", this.allReviews.bind(this));
-  }
+  // initBindingsandEventListeners() {
+  //   this.newReview = document.getElementById("new-review-btn");
+  //   this.newReview.addEventListener("click", this.showFormModal.bind(this));
+  //   this.allReviews = document.getElementById("all-reviews-btn");
+  //   this.allReviews.addEventListener("click", this.allReviews.bind(this));
+  // }
 
   fetchAndLoadCamp() {
     this.campsAdapter.getCamps().then(camps => {
@@ -212,7 +212,6 @@ function reviewFormSubmission(e) {
         review.data.attributes.name,
         review.data.attributes.camp.id
       );
-      debugger;
       alert("Review Saved!");
     });
 }
@@ -220,20 +219,105 @@ function reviewFormSubmission(e) {
 // show new review modal after button click and add event listener for new review form submission
 
 //retrieve all camp reviews
-function fetchCampReviews() {
-  const camp_id = parseInt(`${this.id}`);
-  fetch(`http://127.0.0.1:3000/camps/${camp_id}/reviews`)
+function fetchCampReviews(e) {
+  const selectedCampId = this.id;
+  const selectedCampReviews = [];
+  fetch(`http://127.0.0.1:3000/reviews`)
     .then(resp => resp.json())
     .then(reviews => {
-      reviews["data"].forEach(review => {
-        let reviewObj = new Review(
-          review.attributes.approve,
-          review.attributes.comment,
-          review.attributes.name,
-          review.attributes.camp.id
-        );
-        debugger;
-        reviewObj.createReviewCard();
+      reviews.data.forEach(review => {
+        const reviewCampId = review.attributes.camp.id;
+        if (selectedCampId == reviewCampId) {
+          debugger;
+          selectedCampReviews.push(
+            new Review(
+              review.id,
+              review.attributes.approve.checked,
+              review.attributes.comment,
+              review.attributes.name,
+              review.attributes.camp.id
+            )
+          );
+        }
       });
+      // debugger;
+      selectedCampReviews.forEach(review => createReviewCard(review));
     });
+}
+
+//create reviews card and insert data
+
+function createReviewCard(review) {
+  // debugger;
+  // grab review section
+  let reviewSection = document.getElementById("review-row");
+
+  //create review card div/area
+  let reviewDiv = document.createElement("div");
+
+  //create review card
+  let reviewCard = document.createElement("div");
+  reviewCard.classList.add("card");
+
+  //create header element for card
+  let headerDiv = document.createElement("div");
+  headerDiv.classList.add("card-header");
+
+  // add kid approved icon to review card
+  let rating = `${review.approve}`;
+
+  let approved;
+
+  if ((rating = "true")) {
+    approved = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
+  } else {
+    approved = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;
+  }
+  //debugger;
+
+  //create review card content div/area
+  let reviewBodyDiv = document.createElement("div");
+  reviewBodyDiv.classList.add("card-body");
+
+  //create review card block quote div
+  let reviewBodyBlock = document.createElement("blockquote");
+  reviewBodyBlock.classList.add("blockquote-mb-0");
+
+  //create review comment element
+  let reviewBodyElem = document.createElement("p");
+
+  //add review comment to element
+  reviewBodyElem.innerHTML += `${review.comment}`;
+
+  //create review comment footer
+  let reviewFooterElem = document.createElement("footer");
+  reviewFooterElem.classList.add("blockquote-footer");
+
+  //add review author to comment footer
+  reviewFooterElem.innerHTML += `${review.name}`;
+
+  // Add newly created elements to the DOM
+  //debugger;
+  reviewSection.appendChild(reviewDiv);
+
+  reviewDiv.appendChild(reviewCard);
+
+  reviewCard.appendChild(headerDiv);
+
+  reviewCard.appendChild(reviewBodyDiv);
+
+  reviewBodyDiv.appendChild(reviewBodyBlock);
+
+  reviewBodyBlock.appendChild(reviewBodyElem);
+
+  reviewBodyBlock.appendChild(reviewFooterElem);
+
+  showReviewsModal();
+}
+
+function showReviewsModal() {
+  const allReviewsModal = document.getElementById("all-modal");
+  $(allReviewsModal).modal("show", {
+    backdrop: "static"
+  });
 }

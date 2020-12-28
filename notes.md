@@ -182,3 +182,16 @@ debugger;
 allCamps.forEach(camp => camp.createCampCard());
 
 this.reviewFormSubmission(e)
+
+const formModal = document.getElementById("add-modal");
+\$(formModal).modal("show", {
+backdrop: "static"
+});
+
+let reviewObj = new Review(
+review.id,
+review.attributes.approve,
+review.attributes.comment,
+review.attributes.name,
+review.attributes.camp.id
+);
