@@ -20,24 +20,12 @@ class Camp {
     this.zip = zip;
     this.phone = phone;
     this.campsAdapter = new CampsAdapter();
-    // this.initBindingsandEventListeners();
-    //debugger;
-    //this.reviewsAdapter = new ReviewsAdapter();
-    // this.initBindingsandEventListeners();
-    // this.fetchAndLoadCamps();
+    // this.reviews = this.reviews;
   }
-
-  // initBindingsandEventListeners() {
-  //   this.newReview = document.getElementById("new-review-btn");
-  //   this.newReview.addEventListener("click", this.showFormModal.bind(this));
-  //   this.allReviews = document.getElementById("all-reviews-btn");
-  //   this.allReviews.addEventListener("click", this.allReviews.bind(this));
-  // }
 
   fetchAndLoadCamp() {
     this.campsAdapter.getCamps().then(camps => {
       camps.data.forEach(camp => {
-        // debugger;
         let campObj = new Camp(
           camp.id,
           camp.attributes.img_src,
@@ -55,7 +43,6 @@ class Camp {
   }
 
   createCampCard() {
-    // debugger;
     // grab camp section
     const campSection = document.querySelector(".row");
 
@@ -167,18 +154,14 @@ class Camp {
 }
 
 function showFormModal() {
-  // debugger;
   // opens review form modal
   const formModal = document.getElementById("add-modal");
   $(formModal).modal("show", {
     backdrop: "static"
   });
 
-  //const camp_id = `${this.id}`;
-  //debugger;
-  // debugger;
   const reviewForm = document.getElementById("review-form");
-  // debugger;
+
   reviewForm.innerHTML += `<input type="hidden" id="camp_id" name="camp_id" value=${this.id}></input>`;
   reviewForm.addEventListener("submit", e => reviewFormSubmission(e));
 }
@@ -187,7 +170,8 @@ function showFormModal() {
 
 function reviewFormSubmission(e) {
   e.preventDefault();
-  debugger;
+  const formModal = document.getElementById("add-modal");
+
   let userApprove = e.target.approve.value;
   let userComment = e.target.comment.value;
   let userName = e.target.name.value;
@@ -200,7 +184,6 @@ function reviewFormSubmission(e) {
     camp_id: parseInt(camp_id)
   };
 
-  debugger;
   fetch(`http://127.0.0.1:3000/camps/${camp_id}/reviews`, {
     method: "POST",
     headers: { Accept: "application/json", "Content-Type": "application/json" },
@@ -216,6 +199,7 @@ function reviewFormSubmission(e) {
         review.data.attributes.camp.id
       );
       alert("Review Saved!");
+      $(formModal).modal("hide");
     });
 }
 
@@ -223,15 +207,15 @@ function reviewFormSubmission(e) {
 
 //retrieve all camp reviews
 function fetchCampReviews(e) {
-  const selectedCampId = this.id;
+  const selectedCampId = parseInt(this.id);
   const selectedCampReviews = [];
   fetch(`http://127.0.0.1:3000/reviews`)
     .then(resp => resp.json())
     .then(reviews => {
       reviews.data.forEach(review => {
-        const reviewCampId = review.attributes.camp.id;
+        let reviewCampId = review.attributes.camp.id;
         if (selectedCampId == reviewCampId) {
-          // debugger;
+          debugger;
           selectedCampReviews.push(
             new Review(
               review.id,
@@ -243,7 +227,8 @@ function fetchCampReviews(e) {
           );
         }
       });
-      // debugger;
+      const container = document.querySelector("#review-row");
+      removeAllChildNodes(container);
       selectedCampReviews.forEach(review => createReviewCard(review));
     });
 }
@@ -251,12 +236,13 @@ function fetchCampReviews(e) {
 //create reviews card and insert data
 
 function createReviewCard(review) {
-  // debugger;
+  debugger;
   // grab review section
   let reviewSection = document.getElementById("review-row");
 
   //create review card div/area
   let reviewDiv = document.createElement("div");
+  reviewDiv.className = `${review.id}`;
 
   //create review card
   let reviewCard = document.createElement("div");
@@ -266,16 +252,28 @@ function createReviewCard(review) {
   let headerDiv = document.createElement("div");
   headerDiv.classList.add("card-header");
 
+  //create delete button for review card
+  let deleteBtn = document.createElement("button");
+  deleteBtn.innerHTML += `Delete`;
+  deleteBtn.addEventListener("click", deleteReview.bind(this));
+
   // add kid approved icon to review card
-  let rating = `${review.approve}`;
+  let currentRating = `${review.approve}`;
 
-  let approved;
+  const approved = currentRating;
+  // debugger;
 
-  if ((rating = "Yes")) {
-    approved = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
-  } else {
-    approved = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;
+  let approvedArea;
+
+  switch (approved) {
+    case "Yes":
+      approvedArea = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
+      break;
+    case "No":
+      approvedArea = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;
+      break;
   }
+
   //debugger;
 
   //create review card content div/area
@@ -318,9 +316,19 @@ function createReviewCard(review) {
   showReviewsModal();
 }
 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 function showReviewsModal() {
   const allReviewsModal = document.getElementById("all-modal");
   $(allReviewsModal).modal("show", {
     backdrop: "static"
   });
+}
+
+function deleteReview() {
+  debugger;
 }

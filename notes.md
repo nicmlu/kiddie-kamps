@@ -1,4 +1,4 @@
-index.js file code
+index.js file original code
 
 document.addEventListener("DOMContentLoaded", () => {
 fetchCamps();
@@ -195,3 +195,9 @@ review.attributes.comment,
 review.attributes.name,
 review.attributes.camp.id
 );
+
+if ((rating = "Yes")) {
+approved = headerDiv.innerHTML += `<span>Kid Approved: &#10003; </span>`;
+} else {
+approved = headerDiv.innerHTML += `<span>Kid Approved: &#10007; </span>`;
+}

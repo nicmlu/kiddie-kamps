@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_12_21_055314) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.boolean "approve"
+    t.text "approve"
     t.text "comment"
     t.string "name"
     t.integer "camp_id"

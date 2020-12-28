@@ -9,15 +9,13 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1
   def show
-        if params[:camp_id]
+        #if params[:camp_id]
           #byebug
-            @reviews = Review.where(camp_id: params[:camp_id])
-        else
-            let reviewDiv = document.getElementbyId("review-row")
-            reviewDiv.innerHTML += "There are no reviews for this camp."
-        end
-        
-        # render json: RecipeSerializer.new(@recipes).serialized_json
+            #@reviews = Review.where(camp_id: params[:camp_id])
+        #else
+            #let reviewDiv = document.getElementbyId("review-row")
+            #reviewDiv.innerHTML += "There are no reviews for this camp."
+        #end
   end
 
   # POST /reviews

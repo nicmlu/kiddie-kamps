@@ -103,9 +103,11 @@
 
                             <br>
                             
-                            <label for="approved">Kid Approved: </label>
-                            <input type="radio" name="approve" id= "approve" value="Yes"> Yes
-                            <input type="radio" name="approve" value="No"> No
+                            <label for="approve">Kid Approved: </label>
+                            <select id="approve" name="approve">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
                             </br>
                             <br> 
                             <button type="submit" id="submit-form">Add Review</button>
@@ -155,7 +157,7 @@
     <script src="src/components/review.js"></script>
     <script src="src/components/app.js"></script>
     <script src="src/adapters/campsAdapter.js"></script>
-    <script src="src/adapters/reviewsAdapter.js"></script>
+    <!--<script src="src/adapters/reviewsAdapter.js"></script>-->
     <script src="index.js"></script>
 
     <!--Import jQuery-->
