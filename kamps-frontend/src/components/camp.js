@@ -235,8 +235,13 @@ function fetchCampReviews(e) {
       });
       const container = document.querySelector("#review-row");
       removeAllChildNodes(container);
-      // debugger;
-      selectedCampReviews.forEach(review => createReviewCard(review));
+      debugger;
+      if (selectedCampReviews.length !== 0) {
+        //  block of code to be executed if the condition is true
+        selectedCampReviews.forEach(review => createReviewCard(review));
+      } else {
+        alert("There are no Reviews for this Camp");
+      }
     });
 }
 
