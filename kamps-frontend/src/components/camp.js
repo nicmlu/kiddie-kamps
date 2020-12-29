@@ -202,10 +202,6 @@ function reviewFormSubmission(e) {
       document.getElementById("review-form").reset();
       $(formModal).modal("hide");
       location.reload();
-      // const container = document.querySelector("#review-row");
-      // debugger;
-      // removeAllChildNodes(container);
-      // fetchAndLoadCamp();
     });
 }
 
@@ -235,7 +231,7 @@ function fetchCampReviews(e) {
       });
       const container = document.querySelector("#review-row");
       removeAllChildNodes(container);
-      debugger;
+      //debugger;
       if (selectedCampReviews.length !== 0) {
         //  block of code to be executed if the condition is true
         selectedCampReviews.forEach(review => createReviewCard(review));
