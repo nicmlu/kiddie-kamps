@@ -16,9 +16,9 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   def create
-    @camp = Camp.find_by(id: params[:camp_id])
-    @review = @camp.reviews.create(review_params)
-    #review = Review.new(review_params)
+    # @camp = Camp.find_by(id: params[:camp_id])
+    # @review = @camp.reviews.create(review_params)
+    @review = Review.new(review_params)
     if @review.save 
     render json: ReviewSerializer.new(@review).serialized_json
     else 

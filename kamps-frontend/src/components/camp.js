@@ -158,15 +158,21 @@ function showFormModal() {
     backdrop: "static"
   });
 
-  const reviewForm = document.getElementById("review-form");
-
-  reviewForm.innerHTML += `<input type="hidden" id="camp_id" name="camp_id" value=${this.id}> </input>`;
-  reviewForm.addEventListener("submit", e => reviewFormSubmission(e));
+  const campReviewed =
+    event.target.parentElement.parentElement.parentElement.dataset.id;
+  debugger;
+  document.getElementById("camp_id").value = `${campReviewed}`;
+  submitReview();
 }
 
 //function addFormListener() {}
+function submitReview() {
+  const reviewForm = document.getElementById("review-form");
+  reviewForm.addEventListener("submit", e => reviewFormSubmission(e));
+}
 
 function reviewFormSubmission(e) {
+  e.stopImmediatePropagation();
   e.preventDefault();
   // debugger;
   const formModal = document.getElementById("add-modal");
@@ -182,6 +188,7 @@ function reviewFormSubmission(e) {
     name: userName,
     camp_id: parseInt(camp_id)
   };
+  debugger;
 
   fetch(`http://127.0.0.1:3000/reviews`, {
     method: "POST",
@@ -190,7 +197,6 @@ function reviewFormSubmission(e) {
   })
     .then(response => response.json())
     .then(review => {
-      // debugger;
       let r = new Review(
         review.data.id,
         review.data.attributes.approve,
@@ -200,8 +206,11 @@ function reviewFormSubmission(e) {
       );
       alert("Review Saved!");
       document.getElementById("review-form").reset();
+      document.getElementById("camp_id").value = "";
+      // "#submit-form".unbind("click");
       $(formModal).modal("hide");
-      location.reload();
+
+      // location.reload();
     });
 }
 
